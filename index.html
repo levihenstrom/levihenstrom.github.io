@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levi Henstrom | Systems, Data & AI Engineering</title>
+  <meta name="description" content="Levi Henstrom — startup CTO and BYU MISM (Agentic AI) student who builds production apps, data platforms, and AI automation." />
+  <meta property="og:title" content="Levi Henstrom | Systems, Data & AI Engineering" />
+  <meta property="og:description" content="Case studies: a legal-tech SaaS, a college basketball performance platform, governed data pipelines, and AI automation for a services business." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Levi Henstrom, home">
+      <span class="mark">LH</span><span class="brand-name">Levi Henstrom</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="themeToggle" type="button" aria-label="Toggle color theme">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">Provo, UT · BYU MISM, Agentic AI Track (Apr 2028)</p>
+      <h1>I turn messy business problems into <span class="hl">production systems.</span></h1>
+      <p class="lede">
+        Startup CTO and Information Systems student (4.00 major GPA). I build full-stack web and iOS apps,
+        data platforms and ETL pipelines, and AI agents and automation, for teams that use them every day.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="https://www.linkedin.com/in/levihenstrom" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/levihenstrom" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <dl class="stats">
+        <div><dt>5</dt><dd>organizations I have built systems for</dd></div>
+        <div><dt>8</dt><dd>data sources unified in one warehouse</dd></div>
+        <div><dt>~40%</dt><dd>less manual reporting at Ballard</dd></div>
+        <div><dt>80→100%</dt><dd>call pickup with an AI assistant</dd></div>
+      </dl>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <p class="note">Most of this code is private to the organizations I build for. Each case study covers the problem, the architecture, and what I own.</p>
+      </div>
+
+      <!-- TRYX -->
+      <article class="case" id="tryx">
+        <header class="case-head">
+          <div>
+            <p class="case-meta">Chief Technology Officer · Mar 2026 – Present · <span class="tag amber">Pre-launch</span></p>
+            <h3>Tryx: billable-hours tracking for law firms</h3>
+          </div>
+          <a class="ext" href="https://tryxapp.com" target="_blank" rel="noopener">tryxapp.com ↗</a>
+        </header>
+        <div class="case-body">
+          <div class="case-text">
+            <h4>Problem</h4>
+            <p>Lawyers lose billable time because logging it is tedious, and entries get rejected when task codes or rates are wrong.</p>
+            <h4>What I built</h4>
+            <ul>
+              <li>Native SwiftUI iOS and watchOS apps (widgets, Live Activities, offline queue), plus Kotlin Android and a Next.js web dashboard</li>
+              <li>AI note formalization and UTBMS task coding on stop, rate tiers, and LEDES/CSV invoice exports</li>
+              <li>Firm-scoped row-level security in Postgres, checked by 100+ automated test files in CI</li>
+              <li>Stripe seat-based subscriptions, TestFlight releases via Fastlane and GitHub Actions</li>
+              <li>A Slack-based AI ops agent (Claude API on Supabase Edge Functions) for infrastructure tasks</li>
+            </ul>
+            <p class="stack">Swift · SwiftUI · Kotlin · Next.js · TypeScript · Supabase · PostgreSQL · Stripe · Claude API</p>
+          </div>
+          <figure class="diagram" aria-label="Tryx architecture diagram">
+            <svg viewBox="0 0 360 260" role="img">
+              <title>Tryx architecture: native and web clients talk to Supabase, which connects to Stripe, the Claude API, and a Slack ops agent.</title>
+              <g class="node"><rect x="10" y="14" width="100" height="34" rx="8"/><text x="60" y="36">iOS · watchOS</text></g>
+              <g class="node"><rect x="130" y="14" width="100" height="34" rx="8"/><text x="180" y="36">Android</text></g>
+              <g class="node"><rect x="250" y="14" width="100" height="34" rx="8"/><text x="300" y="36">Next.js web</text></g>
+              <path class="edge" d="M60 48 V88 M180 48 V88 M300 48 V88"/>
+              <g class="node core"><rect x="10" y="88" width="340" height="70" rx="10"/>
+                <text x="180" y="112" class="strong">Supabase</text>
+                <text x="180" y="134">Auth · Postgres + firm-scoped RLS · Edge Functions</text></g>
+              <path class="edge" d="M60 158 V198 M180 158 V198 M300 158 V198"/>
+              <g class="node"><rect x="10" y="198" width="100" height="34" rx="8"/><text x="60" y="220">Stripe seats</text></g>
+              <g class="node accent"><rect x="130" y="198" width="100" height="34" rx="8"/><text x="180" y="220">Claude API</text></g>
+              <g class="node"><rect x="250" y="198" width="100" height="34" rx="8"/><text x="300" y="220">Slack ops agent</text></g>
+            </svg>
+          </figure>
+        </div>
+      </article>
+
+      <!-- BYU -->
+      <article class="case" id="byu">
+        <header class="case-head">
+          <div>
+            <p class="case-meta">Data &amp; Systems Engineer, Men’s Basketball · BYU Athletics · Dec 2025 – Present</p>
+            <h3>An athlete performance platform for a Division I program</h3>
+          </div>
+        </header>
+        <div class="case-body">
+          <div class="case-text">
+            <h4>Problem</h4>
+            <p>Performance data lived in eight vendor tools. Building reports in them was slow, so staff couldn't easily see one athlete's full picture.</p>
+            <h4>What I built</h4>
+            <ul>
+              <li>Python ETL from 8 sources (Smartabase, Kinexon, ShotTracker, SkillCorner, and more) into a star-schema Postgres warehouse, scheduled with pg_cron and GitHub Actions</li>
+              <li>A multi-portal Next.js app with strength, nutrition, rehab, research, and athlete portals on their own subdomains, one sign-on across all of them</li>
+              <li>Role-based access, row-level security, and enforced TOTP two-step verification for health data</li>
+              <li>Combine dashboards that score each player by position against 25 years of NBA Combine results, plus readiness and fatigue thresholds</li>
+            </ul>
+            <p class="stack">Python · Next.js · TypeScript · Supabase · PostgreSQL · pg_cron · Vercel · GitHub Actions</p>
+          </div>
+          <figure class="diagram" aria-label="BYU platform data flow">
+            <svg viewBox="0 0 360 260" role="img">
+              <title>Eight vendor sources feed Python ETL into a Postgres star schema, which serves five role-scoped portals.</title>
+              <g class="node"><rect x="10" y="14" width="104" height="30" rx="8"/><text x="62" y="34">Smartabase</text></g>
+              <g class="node"><rect x="10" y="52" width="104" height="30" rx="8"/><text x="62" y="72">Kinexon</text></g>
+              <g class="node"><rect x="10" y="90" width="104" height="30" rx="8"/><text x="62" y="110">ShotTracker</text></g>
+              <g class="node"><rect x="10" y="128" width="104" height="30" rx="8"/><text x="62" y="148">SkillCorner</text></g>
+              <g class="node muted"><rect x="10" y="166" width="104" height="30" rx="8"/><text x="62" y="186">+4 more</text></g>
+              <path class="edge" d="M114 29 H140 M114 67 H140 M114 105 H140 M114 143 H140 M114 181 H140 M140 29 V181 M140 105 H156"/>
+              <g class="node accent"><rect x="156" y="84" width="82" height="42" rx="8"/><text x="197" y="102">Python ETL</text><text x="197" y="117" class="sm">scheduled</text></g>
+              <path class="edge" d="M238 105 H252"/>
+              <g class="node core"><rect x="252" y="70" width="98" height="70" rx="10"/><text x="301" y="98" class="strong">Postgres</text><text x="301" y="118">star schema</text></g>
+              <path class="edge" d="M301 140 V170"/>
+              <g class="node"><rect x="168" y="170" width="182" height="72" rx="10"/>
+                <text x="259" y="192" class="strong">Role-scoped portals</text>
+                <text x="259" y="212">strength · nutrition · rehab</text>
+                <text x="259" y="230">research · athlete</text></g>
+            </svg>
+          </figure>
+        </div>
+      </article>
+
+      <!-- BALLARD -->
+      <article class="case" id="ballard">
+        <header class="case-head">
+          <div>
+            <p class="case-meta">Data Team Lead · Ballard Center for Social Impact, BYU Marriott · Oct 2025 – Present</p>
+            <h3>A governed data platform for a 150+ person organization</h3>
+          </div>
+        </header>
+        <div class="case-body single">
+          <div class="case-text">
+            <h4>Problem</h4>
+            <p>HR and program data was pulled by hand from campus systems into spreadsheets, with student privacy (FERPA) rules to follow.</p>
+            <h4>What I built and lead</h4>
+            <ul>
+              <li>Lead a team of 4 analysts; promoted from Data Analyst in Apr 2026</li>
+              <li>A PostgreSQL platform with Python ETL, dbt models, and FERPA-compliant views, loaded automatically by GitHub Actions. Manual reporting dropped about 40%</li>
+              <li>Tableau KPI dashboards for supervisors and a Mendix activity-capture app built on the same data</li>
+            </ul>
+            <p class="stack">PostgreSQL · Python · dbt · Tableau · Mendix · Power Automate · GitHub Actions</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- GARD -->
+      <article class="case" id="gard">
+        <header class="case-head">
+          <div>
+            <p class="case-meta">AI Implementation Consultant · OneGard (property services, WA) · Oct 2025 – Aug 2026</p>
+            <h3>AI and workflow automation for a field-services business</h3>
+          </div>
+        </header>
+        <div class="case-body single">
+          <div class="case-text">
+            <h4>Problem</h4>
+            <p>A small office team was keying data between Jobber, state tax tables, and city permit forms, and missing customer calls.</p>
+            <h4>What I built</h4>
+            <ul>
+              <li>An AI answering assistant that raised call pickup from 80% to 100%</li>
+              <li>A weekly n8n job that compares Washington's published tax rates with live Jobber rates and emails the office only when something changed</li>
+              <li>A permit-form pipeline that checks the Jobber GraphQL API for approved quotes, generates pre-filled PDFs, and uses a send ledger and heartbeat to stop duplicate submissions and catch stalled runs</li>
+            </ul>
+            <p class="stack">n8n · Jobber GraphQL API · webhooks · Google Workspace APIs · AI voice assistant</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- SMALLER -->
+      <div class="grid">
+        <article class="card">
+          <p class="case-meta">Lead Web Developer · Jul 2026 – Present</p>
+          <h3>WIZ Sports Performance</h3>
+          <p>Designed and launched the site for a Utah County training facility: online booking, structured data and local SEO, and push-to-deploy CI/CD.</p>
+          <p class="stack">Next.js · TypeScript · Tailwind · Vercel</p>
+          <a class="ext" href="https://www.wizsportsperformance.com" target="_blank" rel="noopener">wizsportsperformance.com ↗</a>
+        </article>
+        <article class="card">
+          <p class="case-meta">BYU IS Core · 2025, 2026</p>
+          <h3>INTEX: two full-stack nonprofit apps</h3>
+          <p>Week-long team builds for real nonprofit clients, including a CRM for Ella Rises. Deployed on Azure, with ML-driven insights in the second build.</p>
+          <p class="stack">PostgreSQL · Express · React · Node.js · Azure · Python</p>
+          <a class="ext" href="https://github.com/levihenstrom/WinterIntex4-5" target="_blank" rel="noopener">Repo ↗</a>
+        </article>
+        <article class="card soon">
+          <p class="case-meta"><span class="tag">In progress</span></p>
+          <h3>Ask the Combine</h3>
+          <p>An analyst agent that answers plain-English questions about NBA Combine data. It writes SQL, charts the answer, and explains it using retrieved research, with a test set to measure accuracy.</p>
+          <p class="stack">Snowflake Cortex · Streamlit · Python · RAG</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-head"><h2>Experience</h2></div>
+      <ol class="timeline">
+        <li><span class="when">Mar 2026 – Now</span><span class="what"><b>Chief Technology Officer</b>, Tryx</span></li>
+        <li><span class="when">Dec 2025 – Now</span><span class="what"><b>Data &amp; Systems Engineer</b>, BYU Men’s Basketball <em>(promoted from Data Science Intern)</em></span></li>
+        <li><span class="when">Oct 2025 – Now</span><span class="what"><b>Data Team Lead</b>, Ballard Center for Social Impact <em>(promoted from Data Analyst)</em></span></li>
+        <li><span class="when">Jul 2026 – Now</span><span class="what"><b>Lead Web Developer</b>, WIZ Sports Performance</span></li>
+        <li><span class="when">Oct 2025 – Aug 2026</span><span class="what"><b>AI Implementation Consultant</b>, OneGard</span></li>
+        <li><span class="when">Sep 2026 – Now</span><span class="what"><b>VP of Operations</b>, AI in Business Society, BYU Marriott</span></li>
+        <li><span class="when">2022 – 2024</span><span class="what"><b>Volunteer Representative</b>, Montreal, Canada. Led 190 missionaries; fluent in Mandarin Chinese</span></li>
+      </ol>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="section-head"><h2>Skills</h2></div>
+      <div class="skills">
+        <div><h4>Languages &amp; APIs</h4><p>Python, TypeScript, JavaScript, SQL, Swift, C#, R, REST, GraphQL</p></div>
+        <div><h4>Apps &amp; data</h4><p>Next.js, React, Node.js, SwiftUI, .NET, PostgreSQL, Supabase, dbt, Tableau, Power BI</p></div>
+        <div><h4>AI &amp; cloud</h4><p>LLM APIs, AI agents, RAG, prompt engineering, n8n, Azure, Vercel, GitHub Actions, Claude Code, Cursor</p></div>
+        <div><h4>Certifications</h4><p>Professional Scrum Master I · AI Proficiency (BYU Marriott) · ACTFL OPI Mandarin, Advanced Low · Eagle Scout</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2>Let’s talk</h2>
+      <p>I'm looking for solutions engineering, AI engineering, and data/systems architecture roles. I'm happy to walk through any of these systems live.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:levi.henstrom@gmail.com">levi.henstrom@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/levihenstrom" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/levihenstrom" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">© <span id="year">2026</span> Levi Henstrom · Hosted on GitHub Pages</footer>
+  <script src="script.js"></script>
+</body>
+</html>
